@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cheatsheet
+      title="Title">
+   <intro>
+      <description>
+         This cheatsheet shows some of the cheatsheet commands JBoss Tools Project Examples comes with.
+         One of those commands are org.jboss.tools.project.examples.cheatsheet.getProjectForCheatsheet which allows you to get a variable representing the project this cheatsheet is inside.
+      </description>
+   </intro>
+   <item
+         skip="false"
+         title="Welcome to this project">
+      <description>
+         It is important to force this to be run to make the variable resolved - a simple way to make that happen is to add an required command as seen below.
+      </description>
+      <command
+            required="true"
+            returns="currentProject"
+            serialization="org.jboss.tools.project.examples.cheatsheet.getProjectForCheatsheet"/>
+   </item>
+   <item
+   	     skip="true"
+         title="Open a file">
+      <description>
+         Now when we have started the cheatsheet executed the getProjectForCheatsheet and we can now refer to it via 'currentProject' embedded in ${} in other commands, such as org.jboss.tools.project.examples.cheatsheet.openFileInEditor which allow you to open a file on a specific line.
+      </description>
+      <command
+            required="false"
+            serialization="org.jboss.tools.project.examples.cheatsheet.openFileInEditor(path=/${currentProject}/cheatsheet.xml,fromLine=27,toLine=29)"/>
+   </item>
+</cheatsheet>
